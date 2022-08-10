@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/cats/show-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="show-container">
+  {% comment %} <div class="cat-img">
+    <img 
+      src="{% static 'images/sk8r-boi-cat.svg' %}" 
+      alt="A skater boy cat"
+    >
+  </div> {% endcomment %}
+  <div class="show-details">
+    <h1>{{ show.title }}</h1>
+    <h1>{{ show.category }}</h1>
+    <h1>{{ show.description }}</h1>
+    <h1>{{ show.watchTime }}</h1>
+  </div>
+  <div class='show-actions'>
+    <a href="{% url 'shows_update' show.id %}" class="btn warn">Edit</a>
+    <a href="{% url 'shows_delete' show.id %}" class="btn danger">Delete</a>
+  </div>
+</section>
+
+{% endblock %}

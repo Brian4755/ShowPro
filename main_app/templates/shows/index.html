@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/cats/show-index.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <h1>Show List</h1>
+  {% comment %} <img src="{% static 'images/cool-cat.svg' %}" alt="A cool cat" />
+  <img src="{% static 'images/happy-cat.svg' %}" alt="A happy cat" />
+  <img src="{% static 'images/teacup-cat.svg' %}" alt="A cat in a teacup" />
+  <img src="{% static 'images/cat-in-box.svg' %}" alt="A cat in a box" /> {% endcomment %}
+</section>
+
+<section class="card-container">
+  {% for show in shows %}
+    <div class="card">
+      <div class="card-content">
+        <a href="/shows/{{ show.id }}">
+          {% comment %} <div class="card-img-container">
+            <img 
+              src="{% static 'images/sk8r-boi-cat.svg' %}" 
+              alt="A skater boy cat"
+            >
+          </div> {% endcomment %}
+          <h2 class="card-title">{{ show.title }}</h2>
+          {% comment %} {% if cat.age > 0 %}
+            <p>A {{ cat.age }} year old {{ cat.breed }}</p>
+          {% else %}
+            <p>A {{ cat.breed }} kitten.</p>
+          {% endif %}
+          <p><small>{{ cat.description }}</small></p> {% endcomment %}
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
