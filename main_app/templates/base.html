@@ -3,14 +3,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    
+    .navBar {
+      height: 100vh;
+      width: 100%;
+    }
+    
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0px;
+      padding-left: 2%;
+      padding-right: 2%;
+      background-color: cornflowerblue;
+    }
+    
+    nav ul li {
+      list-style-type: none;
+      display: inline-block;
+      padding: 0px 20px;
+    }
+    
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    nav ul li a:hover {
+      color:gray;
+      transition: 0.3s;
+    }
+    
+    img {
+      width: 15%;
+    }
+
+    body {
+      background-color: gray;
+    }
+  </style>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link
-    rel="shortcut icon"
-    type="image/png"
-    href=""
-  >
   <title>ShowPro</title>
   <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
   {% block head %}
@@ -18,25 +60,24 @@
 </head>
 <body>
   <header>
-    <div class="header-logo-container">
-      <a href="/">
-        <img 
-          src="{% static 'images/header-logo.svg' %}"
-          alt="ShowPro Logo"
-        >
-      </a>
-    </div>
     <nav>
-      <ul>
-        <li><a href="{% url 'shows_index' %}">Show/Movie List</a></li>
-        {% if user.is_authenticated %}
-        <li><a href="{% url 'show_create' %}">Add Show/Movie</a></li>
-        <li><a href="{% url 'logout' %}">Logout</a></li>
-        {% else %}
-        <li><a href="{% url 'home' %}">Login</a></li>
-        {% endif %}
-      </ul>
-    </nav>
+          <a href="/">
+            <img 
+              src="{% static 'images/movieicon.png' %}"
+              alt="ShowPro Logo"
+            >
+          </a>
+        <ul>
+          <li><a href="{% url 'shows_index' %}">Show/Movie List</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'show_create' %}">Add Show/Movie</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+          <li><a href="{% url 'home' %}">Login</a></li>
+          <li><a href="{% url 'signup' %}">Sign Up</a></li>
+          {% endif %}
+        </ul>
+      </nav>
   </header>
   <main>
     {% block content %}
