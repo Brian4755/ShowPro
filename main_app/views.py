@@ -1,13 +1,14 @@
 from django.shortcuts import render
 from .models import Show
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.auth.views import LoginView
 
 # Add the following import
 from django.http import HttpResponse
 
 # Define the home view
-def home(request):
-  return render(request, 'home.html')
+class Home(LoginView):
+  template_name = 'home.html'
 
 def shows_index(request):
   shows = Show.objects.all()

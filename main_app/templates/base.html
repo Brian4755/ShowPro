@@ -28,8 +28,13 @@
     </div>
     <nav>
       <ul>
-        <li><a href="{% url 'show_create' %}">Add Show/Movie</a></li>
         <li><a href="{% url 'shows_index' %}">Show/Movie List</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'show_create' %}">Add Show/Movie</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+        <li><a href="{% url 'home' %}">Login</a></li>
+        {% endif %}
       </ul>
     </nav>
   </header>
