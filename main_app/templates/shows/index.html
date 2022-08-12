@@ -5,7 +5,7 @@
 <link 
   rel="stylesheet"
   type="text/css"
-  href="{% static 'css/cats/show-index.css' %}"
+  href="{% static 'css/shows/show-index.css' %}"
 />
 {% endblock %}
 
@@ -16,15 +16,17 @@
 </section>
 
 <section class="card-container">
-  {% for show in shows %}
-    <div class="card">
-      <div class="card-content">
+  <ul class="card">
+    {% for show in shows %}
+      <li class="card-content">
         <a href="/shows/{{ show.id }}">
-          <h2 class="card-title">{{ show.title }}</h2>
+          <span class="card-title">Title: {{ show.title }}</span>
+          <span class="card-category">Category: {{ show.category }}</span>
+          <span class="card-user">Username: {{ show.user }}</span>
         </a>
-      </div>
-    </div>
-  {% endfor %}
+      </li>
+    {% endfor %}
+  </ul>
 </section>
 
 {% endblock %}

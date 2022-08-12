@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.card-content {
+  position: relative;
+  width: 450px;
+  margin: 0 auto;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.card-content {
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  color: #fff;
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+.card-content span:nth-child(1) {
+  margin-left: 0%;
+}
+.card-content span:nth-child(2) {
+  margin-left:10px;
+}
+.card-content span:nth-child(3) {
+  margin-left: 10px;
+}
+
+.card-content:hover {
+  transform: scale(1.06);
+  background-color: cornflowerblue;
+}
+
+a {
+  text-decoration: none;
+}
