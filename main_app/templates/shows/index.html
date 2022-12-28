@@ -16,17 +16,17 @@
 </section>
 
 <section class="card-container">
-  <ul class="card">
+  {% comment %} <ul class="card">
     {% for show in shows %}
       <li class="card-content">
-        {% comment %} <a href="/shows/{{ show.id }}">
+        <a href="/shows/{{ show.id }}">
           <span class="card-title">Title: {{ show.title }}</span>
           <span class="card-category">Category: {{ show.category }}</span>
           <span class="card-user">Username: {{ show.user }}</span>
-        </a> {% endcomment %}
+        </a>
       </li>
     {% endfor %}
-  </ul>
+  </ul> {% endcomment %}
 </section>
 
 {% endblock %}
