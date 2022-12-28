@@ -17,6 +17,8 @@ env = environ.Env()
 environ.Env.read_env()
 
 
+CSRF_TRUSTED_ORIGINS = [‘https://web-production-df39.up.railway.app/’]
+
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
