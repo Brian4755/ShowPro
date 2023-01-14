@@ -6,12 +6,9 @@ services:
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
-      - POSTGRES_BITIO_NAME=Brian4755/ShowPro
-      - POSTGRES_BITIO_USER=Brian4755
-      - POSTGRES_BITIO_PASSWORD=v2_3xzRj_aa3sKV4KeKFXb46rXYxt2bC
-      # - POSTGRES_DB=postgres
-      # - POSTGRES_USER=postgres
-      # - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
@@ -20,11 +17,8 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - POSTGRES_BITIO_NAME=Brian4755/ShowPro
-      - POSTGRES_BITIO_USER=Brian4755
-      - POSTGRES_BITIO_PASSWORD=v2_3xzRj_aa3sKV4KeKFXb46rXYxt2bC
-      # - POSTGRES_NAME=postgres
-      # - POSTGRES_USER=postgres
-      # - POSTGRES_PASSWORD=postgres
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     depends_on:
       - db
