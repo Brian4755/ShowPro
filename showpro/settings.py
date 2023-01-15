@@ -100,13 +100,23 @@ WSGI_APPLICATION = 'showpro.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Brian4755/ShowPro',
-        'USER': 'Brian4755',
-        'PASSWORD': 'v2_3y2Fv_vVvxWzxkKgT9pWqP4gCqydq',
+        'NAME': os.environ.get('POSTGRES_BITIO_NAME'),
+        'USER': os.environ.get('POSTGRES_BITIO_USER'),
+        'PASSWORD': os.environ.get('POSTGRES_BITIO_PASSWORD'),
         'HOST': 'db.bit.io',
         'PORT': '5432',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'Brian4755/ShowPro',
+#         'USER': 'Brian4755',
+#         'PASSWORD': 'v2_3y2Fv_vVvxWzxkKgT9pWqP4gCqydq',
+#         'HOST': 'db.bit.io',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
